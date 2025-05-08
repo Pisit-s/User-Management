@@ -15,3 +15,10 @@ body {
   padding: 2rem 0;
 
 }
+
+@layer base {
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #fef9c3 inset !important;
+    -webkit-text-fill-color: black !important;
+  }
+}

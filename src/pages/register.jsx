@@ -66,11 +66,11 @@ function Register() {
 
     return (
      <>
-        <div className="max-w-2xl mt-20 mb-20 mx-auto p-6 bg-white rounded-4xl shadow-md my-8">
-        <div className="text-center mb-10">
-            <img src="../public/logoowen.svg" alt="Workflow" className="mt-6 mx-auto h-50 w-auto mb-10" />
-            <h2 className="text-5xl font-extrabold text-gray-900">ลงทะเบียน</h2>
-          <p className="mt-2 text-2xl text-gray-600">กรุณากรอกข้อมูลเพื่อสร้างบัญชี</p>
+        <div className='max-w-2xl mt-20 mb-20 mx-auto p-6 bg-white rounded-4xl shadow-md my-8'>
+        <div className='text-center mb-10'>
+            <img src='../public/logoowen.svg' alt='Logo' className='mt-6 mx-auto h-50 w-auto mb-10' />
+            <h2 className='text-5xl font-extrabold text-gray-900'>ลงทะเบียน</h2>
+          <p className='mt-2 text-2xl text-gray-600'>กรุณากรอกข้อมูลเพื่อสร้างบัญชี</p>
         </div>
             <Personal
                 handleBlur={handleBlur}
@@ -78,7 +78,12 @@ function Register() {
                 formData={formData}
                 errors={errors}
             />
-            <Profile />
+            <Profile 
+                handleBlur={handleBlur}
+                handleChange={handleChange}
+                formData={formData}
+                errors={errors}
+            />
         </div>
      </>
     )

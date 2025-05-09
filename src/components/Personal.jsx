@@ -1,4 +1,4 @@
-import {TextField,DropdownField} from './InputText'
+import {TextField,DropdownField} from './InputCpmponent'
 
 export default function Personal({handleBlur,handleChange,formData,errors}) {
 
@@ -10,9 +10,9 @@ export default function Personal({handleBlur,handleChange,formData,errors}) {
 
     return (
         <>
-        <div className="p-4 border border-gray-200 rounded-2xl mb-5">
-          <h2 className="text-lg font-semibold mb-4">ข้อมูลส่วนตัว</h2>
-          <div className="mb-4">
+        <div className='p-4 border border-gray-200 rounded-2xl mb-5'>
+          <h2 className='text-lg font-semibold mb-4'>ข้อมูลส่วนตัว</h2>
+          <div className='mb-4'>
             <TextField 
                 type={'text'}
                 label={'ชื่อ - นามสกุล'} 
@@ -21,11 +21,12 @@ export default function Personal({handleBlur,handleChange,formData,errors}) {
                 errors={errors.fullName} 
                 handleChange={handleChange} 
                 handleBlur={handleBlur} 
-                placeholder={'เช่น Pisit Srichumnart'} 
+                placeholder={'เช่น Pisit Srichumnart'}
+                required={true}
             />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
             <div>
               <TextField
                 type={'number'}
@@ -35,7 +36,8 @@ export default function Personal({handleBlur,handleChange,formData,errors}) {
                 errors={errors.age} 
                 handleChange={handleChange} 
                 handleBlur={handleBlur} 
-                placeholder={'มากกว่า 18 ปี'} 
+                placeholder={'มากกว่า 18 ปี'}
+                required={true}
               />
             </div>            
             <div>
@@ -46,6 +48,7 @@ export default function Personal({handleBlur,handleChange,formData,errors}) {
                 defaultLabel={'เลือกเพศ'}
                 errors={errors.gender}
                 options={options}
+                required={true}
               />
             </div>
           </div>

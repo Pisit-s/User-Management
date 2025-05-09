@@ -4,7 +4,7 @@ export function validateField(name, value, formData = {}) {
     switch (name) {
       case 'fullName':
         if (!value.trim()) {
-          newErrors.fullName = 'กรุณากรอกชื่อ-นามสกุล';
+          newErrors.fullName = 'กรุณากรอกชื่อ - นามสกุล';
         } else if (value.trim().length < 3) {
           newErrors.fullName = 'ชื่อ-นามสกุลต้องมีอย่างน้อย 3 ตัวอักษร';
         }

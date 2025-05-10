@@ -1,12 +1,22 @@
-import { Link } from 'react-router-dom'
+import { ButtonPages } from '../components/InputComponent'
 
 export default function HomePage() {
+
+  const buttons = [
+    { label: 'Register Page', path: '/register' },
+    { label: 'User Page', path: '/user' }
+  ]
+
   return (
     <div>
       <div className='max-w-2xl mt-20 mb-20 mx-auto p-6 bg-white rounded-4xl shadow-md my-8'>
         <h1 className='text-center font-bold text-2xl'>Home Page</h1>
         <h2 className='text-center font-medium text-gray-400 text-xl mb-10'>User Management System</h2>
-        <Link to='/register'><button className='px-6 py-2 bg-blue-600 text-white rounded-2xl hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed'>Register Page</button></Link>
+        <div className='flex justify-center space-x-4'>
+          {buttons.map(button => (
+            <ButtonPages key={button.label} label={button.label} path={button.path} />
+          ))}
+        </div>
       </div>
     </div>
   )

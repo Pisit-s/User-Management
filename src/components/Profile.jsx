@@ -1,4 +1,4 @@
-import {TextField,TextAreaField,CheckBoxInterest} from './InputCpmponent'
+import {TextField,TextAreaField,CheckBoxInterest} from './InputComponent'
 
 export default function Profile({handleBlur,handleChange,formData,errors}) {
 
@@ -12,7 +12,7 @@ export default function Profile({handleBlur,handleChange,formData,errors}) {
             <div className='mb-4'>
                 <TextField 
                     type={'url'}
-                    label={'URL ประจำตัว'} 
+                    label={'URL รูปภาพ'} 
                     name={'avatarUrl'} 
                     value={formData.avatarUrl} 
                     errors={errors.avatarUrl} 

@@ -1,4 +1,4 @@
-import {TextField,DropdownField} from './InputCpmponent'
+import {TextField,DropdownField} from './InputComponent'
 
 export default function Personal({handleBlur,handleChange,formData,errors}) {
 

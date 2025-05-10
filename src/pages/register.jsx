@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import { validateForm, validateField } from '../utils/Validation'
 import Personal from '../components/Personal';
+import Contect from '../components/Contect';
+import Password from '../components/Password';
 import Profile from '../components/Profile';
 
 function Register() {
@@ -19,6 +21,8 @@ function Register() {
       });
 
     const [errors, setErrors] = useState({});
+    const [showPassword, setShowPassword] = useState(false);
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
@@ -33,13 +37,15 @@ function Register() {
             interests: updatedInterests
           });
         } else {
-          setFormData({
+          const updatedFormData = {
             ...formData,
             [name]: value
-          });
+          };
           
-          // Validate field and clear error if valid
-          const fieldErrors = validateField(name, value);
+          setFormData(updatedFormData);
+          
+          const fieldErrors = validateField(name, value, updatedFormData);
+          
           if (Object.keys(fieldErrors).length === 0) {
             setErrors(prev => {
               const newErrors = { ...prev };
@@ -47,10 +53,17 @@ function Register() {
               return newErrors;
             });
           } else {
-            setErrors(prev => ({
-              ...prev,
-              ...fieldErrors
-            }));
+            setErrors(prev => {
+              const newErrors = { ...prev };
+              Object.entries(fieldErrors).forEach(([key, value]) => {
+                if (value === '') {
+                  delete newErrors[key];
+                } else {
+                  newErrors[key] = value;
+                }
+              });
+              return newErrors;
+            });
           }
         }
     };
@@ -64,6 +77,8 @@ function Register() {
         }));
     };
 
+    const Components = [Personal,Contect,Password,Profile]
+
     return (
      <>
         <div className='max-w-2xl mt-20 mb-20 mx-auto p-6 bg-white rounded-4xl shadow-md my-8'>
@@ -72,18 +87,19 @@ function Register() {
             <h2 className='text-5xl font-extrabold text-gray-900'>ลงทะเบียน</h2>
           <p className='mt-2 text-2xl text-gray-600'>กรุณากรอกข้อมูลเพื่อสร้างบัญชี</p>
         </div>
-            <Personal
-                handleBlur={handleBlur}
-                handleChange={handleChange}
-                formData={formData}
-                errors={errors}
-            />
-            <Profile 
-                handleBlur={handleBlur}
-                handleChange={handleChange}
-                formData={formData}
-                errors={errors}
-            />
+            {Components.map((Component, index) => (
+                <Component
+                    key={index}
+                    handleBlur={handleBlur}
+                    handleChange={handleChange}
+                    formData={formData}
+                    errors={errors}
+                    showPassword={showPassword}
+                    setShowPassword={setShowPassword}
+                    showConfirmPassword={showConfirmPassword}
+                    setShowConfirmPassword={setShowConfirmPassword}
+                />
+            ))}
         </div>
      </>
     )

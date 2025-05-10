@@ -1,9 +1,12 @@
-export function TextField({ label,type,name,value,errors,handleChange,handleBlur, placeholder,required}) {
+import { Link } from 'react-router-dom'
+
+export function TextField({ label,type,name,value,errors,handleChange,handleBlur, placeholder,required,showPassword,setShowPassword}) {
     return (
         <>
         <label className='block text-sm font-medium mb-1'>
           {label} {required && <span className='text-red-500'>*</span>}
         </label>
+        <div className='relative'>
         <input
           type={type}
           name={name}
@@ -13,10 +16,21 @@ export function TextField({ label,type,name,value,errors,handleChange,handleBlur
           className={`w-full p-2 border rounded-2xl ${errors ? 'border-red-500' : 'border-gray-300 bg-gray-100'}`}
           placeholder={placeholder}
         />
+        {(name === 'password' || name === 'confirmPassword') && (
+          <button
+            type='button'
+            className='absolute right-2 top-2 text-gray-500'
+            onClick={() => setShowPassword(!showPassword)}
+          >
+            {showPassword ? 'ซ่อน' : 'แสดง'}
+          </button>
+        )}
+        </div>
           {errors && <p className='text-red-500 text-sm mt-1'>{errors}</p>}
         </>
       )
   }
+
 
   export function TextAreaField({ label,name,value,errors,handleChange,handleBlur, placeholder,rows,number,maxNumber,required}) {
     return (
@@ -47,7 +61,7 @@ export function TextField({ label,type,name,value,errors,handleChange,handleBlur
             value={formData.gender}
             onChange={handleChange}
             className='w-full p-2 border border-gray-300 bg-gray-100 rounded-2xl'>
-              <option value="">{defaultLabel}</option>
+              <option value=''>{defaultLabel}</option>
               {options.map(option => (
                 <option key={option.value} value={option.value}>
                   {option.label}
@@ -78,4 +92,12 @@ export function TextField({ label,type,name,value,errors,handleChange,handleBlur
           </div>
         </>
     )
+}
+
+export function ButtonPages ({label,path}) {
+  return (
+    <>
+      <Link to={path}><button className='px-6 py-2 bg-blue-600 text-white rounded-2xl hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed'>{label}</button></Link>
+    </>
+  )
 }

@@ -21,7 +21,7 @@ export default function Contect({handleBlur,handleChange,formData,errors}) {
                     </div>
                     <div className='mb-4'>
                         <TextField 
-                            type={'number'}
+                            type={'tel'}
                             label={'เบอร์โทรศัพท์'}
                             name={'phone'} 
                             value={formData.phone} 

@@ -41,10 +41,17 @@ export default function Profile({handleBlur,handleChange,formData,errors}) {
             
             <label className='block text-sm font-medium mb-1'>ความสนใจ</label>
             {interests.map(interest => (
-                <CheckBoxInterest interest={interest} />
+                <CheckBoxInterest 
+                    interest={interest}
+                    name={'interests'}
+                    type={'checkbox'}
+                    formData={formData}
+                    handleChange={handleChange}
+                />
             ))}
 
         </div>
         </>
     )
 }
+

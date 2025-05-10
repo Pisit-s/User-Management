@@ -73,17 +73,19 @@ export function TextField({ label,type,name,value,errors,handleChange,handleBlur
     )
   }
 
-  export function CheckBoxInterest ({interest,name,type}) {
+  export function CheckBoxInterest ({interest,name,type,formData,handleChange}) {
     return (
         <>
           <div className='space-y-2'>
-              <div key={interest} className='form-control mb-2'>
+              <div key={interest} className='form-control'>
                 <label className='label cursor-pointer justify-start gap-2'>
                   <input
                     type={type}
                     id={interest}
                     name={name}
                     value={interest}
+                    checked={formData.interests.includes(interest)}
+                    onChange={handleChange}
                     className='checkbox checkbox-primary'
                   />
                   <span className='label-text'>{interest}</span>

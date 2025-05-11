@@ -31,10 +31,10 @@ export function validateField(name, value, formData = {}) {
           newErrors.password = 'รหัสผ่านต้องมีอย่างน้อย 6 ตัวอักษร'
         }
   
-        if (formData.confirmPassword && value !== formData.confirmPassword) {
-          newErrors.confirmPassword = 'รหัสผ่านไม่ตรงกัน'
-        } else if (formData.confirmPassword && value === formData.confirmPassword) {
-          newErrors.confirmPassword = ''
+        if (formData.confirmPassword && formData.confirmPassword.length > 0) {
+          if (value !== formData.confirmPassword) {
+            newErrors.confirmPassword = 'รหัสผ่านไม่ตรงกัน'
+          }
         }
         break
   
@@ -43,8 +43,6 @@ export function validateField(name, value, formData = {}) {
           newErrors.confirmPassword = 'กรุณายืนยันรหัสผ่าน'
         } else if (value !== formData.password) {
           newErrors.confirmPassword = 'รหัสผ่านไม่ตรงกัน'
-        } else {
-          newErrors.confirmPassword = ''
         }
         break
   

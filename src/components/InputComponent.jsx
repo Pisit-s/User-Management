@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-export function TextField({ label,type,name,value,errors,handleChange,handleBlur, placeholder,required,passwordField,setPasswordField}) {
+export function TextField({ label,type,name,value,errors,handleChange,handleBlur, placeholder,required,passwordField,toggleVisibility}) {
     return (
         <>
         <label className='block text-sm font-medium mb-1'>
@@ -16,11 +16,14 @@ export function TextField({ label,type,name,value,errors,handleChange,handleBlur
           className={`w-full p-2 border rounded-2xl ${errors ? 'border-red-500' : 'border-gray-300 bg-gray-100'}`}
           placeholder={placeholder}
         />
-        {(name === 'password' || name === 'confirmPassword') && (
+        {(name === 'password' || name === 'confirmPassword') && toggleVisibility && (
           <button
             type='button'
             className='absolute right-2 top-2 text-gray-500'
-            onClick={() => setPasswordField(!passwordField)}
+            onClick={(e) => {
+              e.preventDefault();
+              toggleVisibility();
+            }}
           >
             {passwordField ? 'ซ่อน' : 'แสดง'}
           </button>
@@ -99,7 +102,7 @@ export function TextField({ label,type,name,value,errors,handleChange,handleBlur
 export function ButtonPages ({label,path}) {
   return (
     <>
-      <Link to={path}><button className='px-6 py-2 bg-blue-600 text-white rounded-2xl hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed'>{label}</button></Link>
+      <Link to={path}><button className='px-6 py-2 bg-blue-600 text-white rounded-2xl hover:bg-gray-500 disabled:bg-gray-400 disabled:cursor-not-allowed'>{label}</button></Link>
     </>
   )
 }

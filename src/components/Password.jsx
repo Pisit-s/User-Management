@@ -1,6 +1,15 @@
 import {TextField} from './InputComponent'
 
 export default function Password({handleBlur,handleChange,formData,errors,showPassword,setShowPassword,showConfirmPassword,setShowConfirmPassword}){
+
+    const togglePasswordVisibility = (field) => {
+        if (field === 'password') {
+            setShowPassword(prev => !prev);
+        } else if (field === 'confirmPassword') {
+            setShowConfirmPassword(prev => !prev);
+        }
+    };
+    
     return (
         <>
             <div className='p-4 border border-gray-200 rounded-2xl mb-5'>
@@ -18,7 +27,7 @@ export default function Password({handleBlur,handleChange,formData,errors,showPa
                         placeholder={'กรอกรหัสผ่าน'}
                         required={true}
                         passwordField={showPassword}
-                        setPasswordField={setShowPassword}
+                        toggleVisibility={() => togglePasswordVisibility('password')}
                     />
                 </div>
 
@@ -34,7 +43,7 @@ export default function Password({handleBlur,handleChange,formData,errors,showPa
                         placeholder={'กรอกรหัสผ่านอีกครั้ง'}
                         required={true}  
                         passwordField={showConfirmPassword}
-                        setPasswordField={setShowConfirmPassword}
+                        toggleVisibility={() => togglePasswordVisibility('confirmPassword')}
                     />
                 </div>
 

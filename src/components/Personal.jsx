@@ -21,7 +21,7 @@ export default function Personal({handleBlur,handleChange,formData,errors}) {
                 errors={errors.fullName} 
                 handleChange={handleChange} 
                 handleBlur={handleBlur} 
-                placeholder={'เช่น Pisit Srichumnart'}
+                placeholder={'เช่น มานี ใจดี'}
                 required={true}
             />
           </div>

@@ -17,14 +17,14 @@ export default function Password({handleBlur,handleChange,formData,errors,showPa
                         handleBlur={handleBlur} 
                         placeholder={'กรอกรหัสผ่าน'}
                         required={true}
-                        showPassword={showPassword}
-                        setShowPassword={setShowPassword}
+                        passwordField={showPassword}
+                        setPasswordField={setShowPassword}
                     />
                 </div>
 
                 <div className='mb-4'>
                     <TextField 
-                        type={showPassword ? 'text' : 'password'}
+                        type={showConfirmPassword ? 'text' : 'password'}
                         label={'ยืนยืนรหัสผ่าน'} 
                         name={'confirmPassword'} 
                         value={formData.confirmPassword} 
@@ -32,9 +32,9 @@ export default function Password({handleBlur,handleChange,formData,errors,showPa
                         handleChange={handleChange} 
                         handleBlur={handleBlur} 
                         placeholder={'กรอกรหัสผ่านอีกครั้ง'}
-                        required={true}
-                        showPassword={showConfirmPassword}
-                        setShowPassword={setShowConfirmPassword}
+                        required={true}  
+                        passwordField={showConfirmPassword}
+                        setPasswordField={setShowConfirmPassword}
                     />
                 </div>
 

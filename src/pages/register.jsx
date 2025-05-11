@@ -108,7 +108,25 @@ function Register() {
               <Link to='/' className='absolute top-[-5px] left-[-40px] hover:text-gray-500'>
                   <ArrowLeftIcon className='h-12 w-12 text-white bg-blue-600 shadow-2xl hover:bg-gray-500 rounded-[15px]' />
               </Link>
-              <button className='absolute top-[-6px] right-[100px] p-[10px] text-[1.2rem] text-white bg-blue-600 shadow-2xl hover:bg-gray-500 rounded-[15px]'>
+              <button 
+                type="button"
+                onClick={() => {
+                  setFormData({
+                    fullName: '',
+                    email: '',
+                    password: '',
+                    confirmPassword: '',
+                    phone: '',
+                    age: '',
+                    gender: '',
+                    address: '',
+                    avatarUrl: '',
+                    interests: [],
+                    bio: ''
+                  });
+                  setErrors({});
+                }}
+                className='absolute top-[-6px] right-[100px] p-[10px] text-[1.2rem] text-white bg-blue-600 shadow-2xl hover:bg-gray-500 rounded-[15px]'>
                   ล้างข้อมูล
               </button>
               <button className='absolute top-[-6px] right-[-40px] p-[10px] text-[1.2rem] text-white bg-blue-600 shadow-2xl hover:bg-gray-500 rounded-[15px]'>

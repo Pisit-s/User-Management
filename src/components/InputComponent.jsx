@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-export function TextField({ label,type,name,value,errors,handleChange,handleBlur, placeholder,required,showPassword,setShowPassword}) {
+export function TextField({ label,type,name,value,errors,handleChange,handleBlur, placeholder,required,passwordField,setPasswordField}) {
     return (
         <>
         <label className='block text-sm font-medium mb-1'>
@@ -20,9 +20,9 @@ export function TextField({ label,type,name,value,errors,handleChange,handleBlur
           <button
             type='button'
             className='absolute right-2 top-2 text-gray-500'
-            onClick={() => setShowPassword(!showPassword)}
+            onClick={() => setPasswordField(!passwordField)}
           >
-            {showPassword ? 'ซ่อน' : 'แสดง'}
+            {passwordField ? 'ซ่อน' : 'แสดง'}
           </button>
         )}
         </div>
@@ -51,14 +51,14 @@ export function TextField({ label,type,name,value,errors,handleChange,handleBlur
     )
   }
 
-  export function DropdownField({label,name,formData,handleChange,defaultLabel,errors,options,required}) {
+  export function DropdownField({label,name,value,handleChange,defaultLabel,errors,options,required}) {
 
     return (
       <>
         <label className='block text-sm font-medium mb-1'>{label} {required && <span className='text-red-500'>*</span>}</label>
           <select
             name={name}
-            value={formData.gender}
+            value={value}
             onChange={handleChange}
             className='w-full p-2 border border-gray-300 bg-gray-100 rounded-2xl'>
               <option value=''>{defaultLabel}</option>

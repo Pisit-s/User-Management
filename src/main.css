@@ -8,7 +8,7 @@
   }
 
   50% {
-      transform: translateY(-10px);
+      transform: translateY(-15px);
   }
 
   100% {
@@ -32,7 +32,11 @@ body {
 
 .logo-modify {
   animation: float-badge 2s ease-in-out infinite;
-  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.462));
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.354));
+}
+
+.active-image {
+  animation: float-badge 2s ease-in-out infinite;
 }
 
 @layer base {

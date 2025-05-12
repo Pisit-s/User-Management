@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { ArrowLeftIcon } from '@heroicons/react/24/solid'
 
 export function TextField({ label,type,name,value,errors,handleChange,handleBlur, placeholder,required,passwordField,toggleVisibility}) {
     return (
@@ -54,7 +55,7 @@ export function TextField({ label,type,name,value,errors,handleChange,handleBlur
     )
   }
 
-  export function DropdownField({label,name,value,handleChange,defaultLabel,errors,options,required}) {
+  export function DropdownField({label,name,value,handleChange,handleBlur,defaultLabel,errors,options,required}) {
 
     return (
       <>
@@ -63,6 +64,7 @@ export function TextField({ label,type,name,value,errors,handleChange,handleBlur
             name={name}
             value={value}
             onChange={handleChange}
+            onBlur={handleBlur}
             className='w-full p-2 border border-gray-300 bg-gray-100 rounded-2xl'>
               <option value=''>{defaultLabel}</option>
               {options.map(option => (
@@ -103,6 +105,16 @@ export function ButtonPages ({label,path}) {
   return (
     <>
       <Link to={path}><button className='px-6 py-2 bg-blue-600 text-white rounded-2xl hover:bg-gray-500 disabled:bg-gray-400 disabled:cursor-not-allowed'>{label}</button></Link>
+    </>
+  )
+}
+
+export function ToHomePage() {
+  return (
+    <>
+          <Link to='/' className='absolute top-[-5px] left-[-40px] hover:text-gray-500'>
+            <ArrowLeftIcon className='h-12 w-12 text-white bg-blue-600 shadow-2xl hover:bg-gray-500 rounded-[15px]' />
+          </Link>
     </>
   )
 }

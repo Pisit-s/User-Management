@@ -1,5 +1,4 @@
-import { Link } from 'react-router-dom'
-import { ArrowLeftIcon } from '@heroicons/react/24/solid'
+import { ToHomePage } from '../components/InputComponent'
 
 export default function Login() {
     return (
@@ -12,9 +11,7 @@ export default function Login() {
 
                 </div>
                 <div className="relative">
-                    <Link to='/' className='absolute top-[-5px] left-[-40px] hover:text-gray-500'>
-                        <ArrowLeftIcon className='h-12 w-12 text-white bg-blue-600 shadow-2xl hover:bg-gray-500 rounded-[15px]' />
-                    </Link>
+                    <ToHomePage />
                 </div>
             </div>
         </>

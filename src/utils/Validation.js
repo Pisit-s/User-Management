@@ -16,7 +16,6 @@ export function validateField(name, value, formData = {}) {
         } else if (!/\S+@\S+\.\S+/.test(value)) {
           newErrors.email = 'รูปแบบอีเมลไม่ถูกต้อง'
         } else {
-          // Check if email already exists
           const users = JSON.parse(localStorage.getItem('users') || '[]')
           if (users.some(user => user.email === value)) {
             newErrors.email = 'อีเมลนี้มีผู้ใช้งานแล้ว'
@@ -52,6 +51,11 @@ export function validateField(name, value, formData = {}) {
         }
         else if (value && !/^0\d{9}$/.test(value)) {
           newErrors.phone = 'เบอร์โทรศัพท์ต้องอยู่ในรูปแบบ 0xxxxxxxxx'
+        } else {
+          const users = JSON.parse(localStorage.getItem('users') || '[]')
+          if (users.some(user => user.phone === value)) {
+            newErrors.phone = 'เบอร์โทรศัพท์นี้มีผู้ใช้งานแล้ว'
+          }
         }
         break
   
@@ -61,6 +65,12 @@ export function validateField(name, value, formData = {}) {
         }
         else if (value && (isNaN(value) || parseInt(value) < 18)) {
           newErrors.age = 'อายุต้องมากกว่าหรือเท่ากับ 18 ปี'
+        }
+        break
+
+      case 'gender':
+        if (!value) {
+          newErrors.gender = 'กรุณาเลือกเพศ'
         }
         break
   
@@ -80,8 +90,7 @@ export function validateField(name, value, formData = {}) {
 export function validateForm(formData) {
     const errors = {}
   
-    // Validate each field
-    Object.entries(formData).forEach(([key, value]) => {
+      Object.entries(formData).forEach(([key, value]) => {
       const fieldErrors = validateField(key, value, formData)
       Object.assign(errors, fieldErrors)
     })

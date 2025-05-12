@@ -43,8 +43,10 @@ export default function Personal({handleBlur,handleChange,formData,errors}) {
             <div>
               <DropdownField 
                 label={'เพศ'} 
+                name={'gender'}
                 formData={formData.gender} 
                 handleChange={handleChange} 
+                handleBlur={handleBlur}
                 defaultLabel={'เลือกเพศ'}
                 errors={errors.gender}
                 options={options}

@@ -1,7 +1,7 @@
 export default function Summary({formData,handleEdit,handleFinalSubmit,isSubmitting}) {
     return (
         <>
-        <div className='max-w-2xl mx-auto p-6 bg-white rounded-2xl shadow-md my-8'>
+        <div className='max-w-2xl mt-20 mb-20 mx-6 sm:mx-8 md:mx-auto p-6 bg-white rounded-4xl shadow-2xl my-8'>
         <h2 className='text-4xl font-extrabold text-center text-gray-900 mt-10 mb-[160px]'>ตรวจสอบข้อมูลก่อนยืนยัน</h2>
           {formData.avatarUrl && (
                 <div className='relative flex justify-center items-center mt-15 mb-10'>
@@ -52,7 +52,7 @@ export default function Summary({formData,handleEdit,handleFinalSubmit,isSubmitt
               ) || ' -' }</p>
             </div>
             
-            <div className='flex justify-between'>
+            <div className='flex justify-between relative'>
               <button
                 type='button'
                 onClick={handleEdit}
@@ -65,9 +65,9 @@ export default function Summary({formData,handleEdit,handleFinalSubmit,isSubmitt
                 type='button'
                 onClick={handleFinalSubmit}
                 disabled={isSubmitting}
-                className='px-6 py-2 bg-blue-600 text-white rounded-2xl hover :bg-blue-700 disabled :bg-gray-400 disabled :cursor-not-allowed'
+                className='absolute top-[35px] right-[-60px] p-[10px] text-[1.2rem] text-white bg-blue-600 shadow-2xl rounded-[15px] hover:bg-gray-500'
               >
-                {isSubmitting ? 'กำลังส่งข้อมูล...'  : 'ยืนยันและลงทะเบียน'}
+                {isSubmitting ? 'กำลังส่งข้อมูล...' : 'ยืนยันและลงทะเบียน'}
               </button>
             </div>
           </div>

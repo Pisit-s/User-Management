@@ -16,7 +16,7 @@ export default function UserCard({paginatedUsers}) {
                                         </figure>
                                     ) || (
                                         <figure className='flex-shrink-0 flex items-center justify-center'>
-                                            <img src='https://gravatar.com/avatar/ff149c5e70ae12dea893526112da679e?s=400&d=mp&r=x' alt='avatar' className='w-20 h-20 object-cover rounded-full border-4 border-primary' />
+                                            <img src='https://gravatar.com/avatar/ff149c5e70ae12dea893526112da679e?s=400&d=mp&r=x' alt='avatar' className='w-30 h-30 object-cover rounded-full border-4 border-primary' />
                                         </figure>
                                     )}
                                     <div className='flex-1'>

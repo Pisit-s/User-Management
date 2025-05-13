@@ -20,7 +20,7 @@ export function TextField({ label,type,name,value,errors,handleChange,handleBlur
         {(name === 'password' || name === 'confirmPassword') && toggleVisibility && (
           <button
             type='button'
-            className='absolute right-2 top-2 text-gray-500'
+            className='absolute right-2 top-2 text-gray-500 font-bold'
             onClick={(e) => {
               e.preventDefault();
               toggleVisibility();

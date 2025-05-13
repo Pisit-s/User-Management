@@ -105,7 +105,7 @@ export default function Register() {
       }
     } 
     
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
       e.preventDefault()
 
       const formErrors = validateForm(formData)
@@ -178,7 +178,7 @@ export default function Register() {
     }
 
     useEffect(() => {
-      const requiredFields = ['fullName', 'email', 'password', 'confirmPassword']
+      const requiredFields = ['fullName', 'email', 'phone', 'password', 'confirmPassword', 'age', 'gender']
       const hasRequiredFields = requiredFields.every(field => formData[field].trim() !== '')
       const hasNoErrors = Object.keys(errors).length === 0
       
@@ -200,7 +200,7 @@ export default function Register() {
 
     return (
      <>
-        <div className='max-w-2xl mt-20 mb-20 mx-auto p-6 bg-white rounded-4xl shadow-2xl my-8'>
+        <div className='max-w-2xl mt-20 mb-20 mx-6 sm:mx-8 md:mx-auto p-6 bg-white rounded-4xl shadow-2xl my-8'>
           <div className='text-center mb-10'>
           <img src='../public/logoowen.svg' alt='Logo' className='mt-6 mx-auto h-50 w-auto mb-10 logo-modify' />
             <h2 className='text-5xl font-extrabold text-gray-900'>ลงทะเบียน</h2>

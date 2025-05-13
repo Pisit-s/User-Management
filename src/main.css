@@ -35,7 +35,7 @@ body {
   filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.354));
 }
 
-.active-image {
+.motion-upanddown {
   animation: float-badge 2s ease-in-out infinite;
 }
 

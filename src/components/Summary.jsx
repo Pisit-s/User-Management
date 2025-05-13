@@ -56,7 +56,7 @@ export default function Summary({formData,handleEdit,handleFinalSubmit,isSubmitt
               <button
                 type='button'
                 onClick={handleEdit}
-                className='px-4 py-2 bg-gray-300 text-gray-700 rounded-2xl hover :bg-gray-400'
+                className='absolute top-0 left-[-40px] p-[10px] text-[1.2rem] text-white bg-gray-500 shadow-2xl rounded-[15px]'
               >
                 แก้ไขข้อมูล
               </button>
@@ -65,7 +65,7 @@ export default function Summary({formData,handleEdit,handleFinalSubmit,isSubmitt
                 type='button'
                 onClick={handleFinalSubmit}
                 disabled={isSubmitting}
-                className='absolute top-[35px] right-[-60px] p-[10px] text-[1.2rem] text-white bg-blue-600 shadow-2xl rounded-[15px] hover:bg-gray-500'
+                className='absolute top-0 right-[-40px] p-[10px] text-[1.2rem] text-white bg-blue-600 shadow-2xl rounded-[15px]'
               >
                 {isSubmitting ? 'กำลังส่งข้อมูล...' : 'ยืนยันและลงทะเบียน'}
               </button>

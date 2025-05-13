@@ -24,7 +24,7 @@ export default function UserCard({paginatedUsers}) {
                                         <p className='text-gray-600'><span className='font-bold'>อีเมล:</span> {user.email}</p>
                                         <div className=' break-all mt-2 mb-4'>
                                             <p className='font-bold mb-1 text-gray-700'>Password (hashed)</p>
-                                            <code className='block w-full bg-gray-100 rounded-md p-2 text-xs text-gray-500'>
+                                            <code className='block w-full bg-gray-100 rounded-md p-2 text-[0.72rem] text-gray-500'>
                                                 {user.password}
                                             </code>
                                         </div>

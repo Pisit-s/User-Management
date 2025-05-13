@@ -8,7 +8,7 @@ export default function Summary({formData,handleEdit,handleFinalSubmit,isSubmitt
                   <img 
                     src={formData.avatarUrl} 
                     alt='รูปประจำตัว' 
-                    className='absolute top-[-120px] w-50 h-50 object-cover rounded-full mx-auto border-8 shadow-2xl border-primary active-image' 
+                    className='absolute top-[-120px] w-50 h-50 object-cover rounded-full mx-auto border-8 shadow-2xl border-primary motion-upanddown' 
                   />
                 </div>
               ) || (
@@ -16,7 +16,7 @@ export default function Summary({formData,handleEdit,handleFinalSubmit,isSubmitt
                   <img 
                     src='https://gravatar.com/avatar/ff149c5e70ae12dea893526112da679e?s=400&d=mp&r=x' 
                     alt='default' 
-                    className='absolute top-[-120px] w-50 h-50 object-cover rounded-full mx-auto border-8 shadow-2xl border-primary active-image' 
+                    className='absolute top-[-120px] w-50 h-50 object-cover rounded-full mx-auto border-8 shadow-2xl border-primary motion-upanddown' 
                   />
                 </div>
               )}

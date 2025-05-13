@@ -12,7 +12,7 @@ export default function UserCard({paginatedUsers}) {
                                 <div className='flex flex-col md:flex-row md:gap-4'>
                                     {user.avatarUrl && (
                                         <figure className='flex-shrink-0 flex items-center justify-center'>
-                                            <img src={user.avatarUrl} alt='avatar' className='w-20 h-20 object-cover rounded-full border-4 border-primary' />
+                                            <img src={user.avatarUrl} alt='avatar' className='w-30 h-30 object-cover rounded-full border-4 border-primary' />
                                         </figure>
                                     ) || (
                                         <figure className='flex-shrink-0 flex items-center justify-center'>

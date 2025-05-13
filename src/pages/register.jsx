@@ -76,6 +76,34 @@ export default function Register() {
           }
         }
     } 
+
+    const handleBlur = (e) => {
+        const { name, value } = e.target 
+        if (value) {
+          const fieldErrors = validateField(name, value, formData) 
+          
+          setErrors(prev => {
+              const newErrors = { ...prev } 
+              
+              if (!fieldErrors[name] || fieldErrors[name] === '') {
+                  delete newErrors[name] 
+              } else {
+                  newErrors[name] = fieldErrors[name] 
+              }
+              
+              if (name === 'password' && formData.confirmPassword) {
+                  const confirmErrors = validateField('confirmPassword', formData.confirmPassword, formData) 
+                  if (!confirmErrors.confirmPassword || confirmErrors.confirmPassword === '') {
+                      delete newErrors.confirmPassword 
+                  } else {
+                      newErrors.confirmPassword = confirmErrors.confirmPassword 
+                  }
+              }
+              
+              return newErrors 
+          }) 
+      }
+    } 
     
     const handleSubmit = async (e) => {
       e.preventDefault()
@@ -148,34 +176,6 @@ export default function Register() {
     const handleEdit = () => {
       setShowSummary(false)
     }
-
-    const handleBlur = (e) => {
-        const { name, value } = e.target 
-        if (value) {
-          const fieldErrors = validateField(name, value, formData) 
-          
-          setErrors(prev => {
-              const newErrors = { ...prev } 
-              
-              if (!fieldErrors[name] || fieldErrors[name] === '') {
-                  delete newErrors[name] 
-              } else {
-                  newErrors[name] = fieldErrors[name] 
-              }
-              
-              if (name === 'password' && formData.confirmPassword) {
-                  const confirmErrors = validateField('confirmPassword', formData.confirmPassword, formData) 
-                  if (!confirmErrors.confirmPassword || confirmErrors.confirmPassword === '') {
-                      delete newErrors.confirmPassword 
-                  } else {
-                      newErrors.confirmPassword = confirmErrors.confirmPassword 
-                  }
-              }
-              
-              return newErrors 
-          }) 
-      }
-    } 
 
     useEffect(() => {
       const requiredFields = ['fullName', 'email', 'password', 'confirmPassword']

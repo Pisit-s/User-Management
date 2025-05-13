@@ -54,7 +54,6 @@ export default function User() {
                     <UserCard paginatedUsers={paginatedUsers} />
                 </div>
 
-                {pages > 1 &&
                     <div className='join flex justify-center my-6'>
                         {[...Array(pages)].map((_, idx) => (
                             <button
@@ -66,7 +65,7 @@ export default function User() {
                             </button>
                         ))}
                     </div>
-                }
+                
                 <div className='relative'>
                     <ToHomePage />
                 </div>

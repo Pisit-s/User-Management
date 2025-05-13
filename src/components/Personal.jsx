@@ -6,7 +6,7 @@ export default function Personal({handleBlur,handleChange,formData,errors}) {
         { value: 'Male', label: 'ชาย' },
         { value: 'Female', label: 'หญิง' },
         { value: 'Other', label: 'อื่นๆ' }
-      ];
+      ]
 
     return (
         <>

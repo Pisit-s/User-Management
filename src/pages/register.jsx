@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { validateForm, validateField } from '../utils/Validation'
 import { hashPassword } from '../utils/HashPassword'
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid'
 import { useNavigate } from 'react-router-dom'
 import { ToHomePage } from '../components/InputComponent'
 import Summary from '../components/Summary'

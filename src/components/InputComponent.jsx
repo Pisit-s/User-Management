@@ -22,8 +22,8 @@ export function TextField({ label,type,name,value,errors,handleChange,handleBlur
             type='button'
             className='absolute right-2 top-2 text-gray-500 font-bold'
             onClick={(e) => {
-              e.preventDefault();
-              toggleVisibility();
+              e.preventDefault()
+              toggleVisibility()
             }}
           >
             {passwordField ? 'ซ่อน' : 'แสดง'}

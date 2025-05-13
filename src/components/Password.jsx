@@ -4,11 +4,11 @@ export default function Password({handleBlur,handleChange,formData,errors,showPa
 
     const togglePasswordVisibility = (field) => {
         if (field === 'password') {
-            setShowPassword(prev => !prev);
+            setShowPassword(prev => !prev)
         } else if (field === 'confirmPassword') {
-            setShowConfirmPassword(prev => !prev);
+            setShowConfirmPassword(prev => !prev)
         }
-    };
+    }
     
     return (
         <>

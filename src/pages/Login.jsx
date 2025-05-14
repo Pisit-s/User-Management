@@ -94,7 +94,7 @@ export default function Login() {
         <>
         <div className='max-w-2xl mt-20 mb-20 mx-auto p-6 bg-white rounded-4xl shadow-md'>
             <div className='text-center mb-8'>
-                <img src='../public/logoowen.svg' alt='Logo' className='mt-6 mx-auto h-50 w-auto mb-10 logo-modify' />
+                <img src='./logoowen.svg' alt='Logo' className='mt-6 mx-auto h-50 w-auto mb-10 logo-modify' />
                 <h2 className='text-5xl font-extrabold text-gray-900'>เข้าสู่ระบบ</h2>
                 <p className='mt-2 text-2xl text-gray-600'>กรอกอีเมลและรหัสผ่านที่เคยลงทะเบียนแล้ว</p>
             </div>

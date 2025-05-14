@@ -22,6 +22,14 @@ export function validateField(name, value, formData = {}) {
           }
         }
         break
+
+      case 'email-login':
+        if (!value.trim()) {
+          newErrors.email = 'กรุณากรอกอีเมล'
+        } else if (!/\S+@\S+\.\S+/.test(value)) {
+          newErrors.email = 'รูปแบบอีเมลไม่ถูกต้อง'
+        }
+        break
   
       case 'password':
         if (!value) {

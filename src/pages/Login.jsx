@@ -42,28 +42,17 @@ export default function Login() {
     const handleLogin = async (e) => {
         e.preventDefault()
 
-        const emailErrors = validateField('email-login', email)
-        if (emailErrors.email) {
-            setErrors(prev => ({ ...prev, email: emailErrors.email }))
-            return
-        }
-        
         setLoading(true)
         setErrorMsg('')
 
         let users = localStorage.getItem('users')
-        if (!users) {
-            setErrorMsg('ไม่พบข้อมูลผู้ใช้')
-            setLoading(false)
-            return
-        }
         users = JSON.parse(users)
         const user = Array.isArray(users)
             ? users.find(u => u.email.toLowerCase() === email.trim().toLowerCase())
             : users.email === email.trim().toLowerCase() ? users : null
 
         if (!user) {
-            setErrorMsg('อีเมลไม่ถูกต้อง')
+            setErrorMsg('ไม่พบผู้ใช้งานอีเมลนี้')
             setLoading(false)
             return
         }

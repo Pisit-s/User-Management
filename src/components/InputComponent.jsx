@@ -104,7 +104,7 @@ export function TextField({ label,type,name,value,errors,handleChange,handleBlur
 export function ButtonPages ({label,path}) {
   return (
     <>
-      <Link to={path}><button className='px-6 py-2 bg-blue-600 text-white rounded-2xl hover:bg-gray-500 disabled:bg-gray-400 disabled:cursor-not-allowed'>{label}</button></Link>
+      <Link to={path}><button className='px-6 py-2 bg-blue-600 text-white rounded-2xl hover:bg-gray-500 disabled:bg-gray-400 disabled:cursor-not-allowed mb-3'>{label}</button></Link>
     </>
   )
 }

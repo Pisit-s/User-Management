@@ -42,7 +42,7 @@ export default function Profile() {
     return (
         <>
         <div className='flex items-center justify-center min-h-screen'>
-            <div className='max-w-2xl mt-20 mb-20 mx-auto p-6 bg-white rounded-4xl shadow-md'>
+            <div className='max-w-2xl mt-20 mb-20 mx-6 p-6 bg-white rounded-4xl shadow-md'>
             <div className='flex flex-col items-center relative'>
                 <img
                     src={user.avatarUrl || 'https://gravatar.com/avatar/ff149c5e70ae12dea893526112da679e?s=400&d=mp&r=x'}
@@ -92,7 +92,7 @@ export default function Profile() {
 
             </div>
             <div className='relative'>
-                <button className='absolute top-[-6px] right-[-40px] p-[10px] text-[1.2rem] rounded-[15px] bg-white border-3 btn btn-outline btn-error w-40 mb-5' onClick={handleLogout}>
+                <button className='absolute top-[-6px] right-[-40px] p-[10px] text-[1.2rem] font-bold rounded-4xl bg-white border-3 border-red-400 text-red-400 w-40 mb-5 hover:bg-red-500 hover:border-white hover:text-white' onClick={handleLogout}>
                     ออกจากระบบ
                 </button>
                 <ToHomePage />

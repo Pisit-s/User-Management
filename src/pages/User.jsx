@@ -8,6 +8,7 @@ export default function User() {
     const [currentPage, setCurrentPage] = useState(1)
     const USERS_PER_PAGE = 10
 
+
     useEffect(() => {
         const usersString = localStorage.getItem('users')
         try {

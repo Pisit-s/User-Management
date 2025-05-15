@@ -7,7 +7,7 @@ import { validateField } from '../utils/Validation'
 export default function Login() {
     const [email,setEmail] = useState('')
     const [password,setPassword] = useState('')
-    const [remember,setRemember] = useState(false)
+    const [remember,setRemember] = useState(true)
     const [errorMsg,setErrorMsg] = useState('')
     const [loading,setLoading] = useState(false)
     const [errors, setErrors] = useState({})
@@ -92,7 +92,8 @@ export default function Login() {
 
     return (
         <>
-        <div className='max-w-2xl mt-20 mb-20 mx-auto p-6 bg-white rounded-4xl shadow-md'>
+        <div className='flex items-center justify-center min-h-screen'>
+        <div className='max-w-2xl mt-0 mb-20 mx-6 p-6 bg-white rounded-4xl shadow-md'>
             <div className='text-center mb-8'>
                 <img src='./logoowen.svg' alt='Logo' className='mt-6 mx-auto h-50 w-auto mb-10 logo-modify' />
                 <h2 className='text-5xl font-extrabold text-gray-900'>เข้าสู่ระบบ</h2>
@@ -147,6 +148,7 @@ export default function Login() {
             <div className='relative'>
                 <ToHomePage />
             </div>
+        </div>
         </div>
         </>
     )

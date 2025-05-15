@@ -1,14 +1,5 @@
 export default function UserCard({paginatedUsers}) {
 
-    const handleDelete = (userId) => {
-        if (window.confirm('คุณต้องการลบบัญชีผู้ใช้งานนี้????')) {
-            const users = JSON.parse(localStorage.getItem('users') || '[]');
-            const updatedUsers = users.filter(user => user.id !== userId);
-            localStorage.setItem('users', JSON.stringify(updatedUsers));
-            window.location.reload();
-        }
-    }
-
     return (
         <>
             {paginatedUsers.length === 0 ? (
@@ -65,13 +56,6 @@ export default function UserCard({paginatedUsers}) {
                                                 )}
                                             </div>
                                         </div>
-                                        <div className='mt-4 flex justify-end'>
-                                    <button 
-                                        onClick={() => handleDelete(user.id)}
-                                        className='btn btn-error btn-sm text-white rounded-4xl'
-                                    >ลบข้อมูล
-                                    </button>
-                                </div>
                                     </div>
                                 </div>
                             </div>
